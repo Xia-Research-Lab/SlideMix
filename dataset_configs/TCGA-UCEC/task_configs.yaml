@@ -1,0 +1,303 @@
+all_task_dict:
+  OS: surv
+  DFS: surv
+  AGE: reg
+  AJCC_STAGING_EDITION: reg
+  CLINICAL_STAGE: cls
+  DAYS_TO_INITIAL_PATHOLOGIC_DIAGNOSIS: reg
+  DIABETES_DIAGNOSIS_INDICATOR: cls
+  ETHNICITY: cls
+  GRADE: cls
+  HEIGHT: reg
+  HISTOLOGICAL_DIAGNOSIS: cls
+  HISTORY_COLORECTAL_CANCER: cls
+  HISTORY_HORMONAL_CONTRACEPTIVES_USE: cls
+  HISTORY_MENOPAUSAL_HORMONE_THERAPY: cls
+  HISTORY_NEOADJUVANT_TRTYN: cls
+  HISTORY_OTHER_MALIGNANCY: cls
+  HYPERTENSION_DIAGNOSIS: cls
+  ICD_10: cls
+  ICD_O_3_HISTOLOGY: cls
+  ICD_O_3_SITE: cls
+  INITIAL_PATHOLOGIC_DX_YEAR: reg
+  LYMPH_NODES_AORTIC_EXAMINED_COUNT: reg
+  LYMPH_NODES_AORTIC_POS_BY_HE: reg
+  LYMPH_NODES_AORTIC_POS_BY_IHC: reg
+  LYMPH_NODES_AORTIC_POS_TOTAL: reg
+  LYMPH_NODES_PELVIC_EXAMINED_COUNT: reg
+  LYMPH_NODES_PELVIC_POS_BY_HE: reg
+  LYMPH_NODES_PELVIC_POS_BY_IHC: reg
+  LYMPH_NODES_PELVIC_POS_TOTAL: reg
+  MENOPAUSE_STATUS: cls
+  METHOD_OF_INITIAL_SAMPLE_PROCUREMENT: cls
+  METHOD_OF_INITIAL_SAMPLE_PROCUREMENT_OTHER: cls
+  NEW_TUMOR_EVENT_AFTER_INITIAL_TREATMENT: cls
+  PERITONEAL_WASHING: cls
+  PHARMACEUTICAL_TX_ADJUVANT: cls
+  PREGNANCIES_FULL_TERM_COUNT: cls
+  PROSPECTIVE_COLLECTION: cls
+  RACE: cls
+  RADIATION_TREATMENT_ADJUVANT: cls
+  RESIDUAL_TUMOR: cls
+  RETROSPECTIVE_COLLECTION: cls
+  SAMPLE_COUNT: reg
+  SITE_OF_TUMOR_TISSUE: cls
+  SLIDE_TYPE: cls
+  SURGICAL_APPROACH_AT_DIAGNOSIS: cls
+  TISSUE_SOURCE_SITE: cls
+  TREATMENT_OUTCOME_FIRST_COURSE: cls
+  TUMOR_INVASION_PERCENT: reg
+  TUMOR_STATUS: cls
+  WEIGHT: reg
+tasks_to_run:
+- AGE
+- AJCC_STAGING_EDITION
+- CLINICAL_STAGE
+- DAYS_TO_INITIAL_PATHOLOGIC_DIAGNOSIS
+- DFS_MONTHS
+- DFS_STATUS
+- DIABETES_DIAGNOSIS_INDICATOR
+- ETHNICITY
+- GRADE
+- HEIGHT
+- HISTOLOGICAL_DIAGNOSIS
+- HISTORY_COLORECTAL_CANCER
+- HISTORY_HORMONAL_CONTRACEPTIVES_USE
+- HISTORY_MENOPAUSAL_HORMONE_THERAPY
+- HISTORY_NEOADJUVANT_TRTYN
+- HISTORY_OTHER_MALIGNANCY
+- HYPERTENSION_DIAGNOSIS
+- ICD_10
+- ICD_O_3_HISTOLOGY
+- ICD_O_3_SITE
+- INITIAL_PATHOLOGIC_DX_YEAR
+- LYMPH_NODES_AORTIC_EXAMINED_COUNT
+- LYMPH_NODES_AORTIC_POS_BY_HE
+- LYMPH_NODES_AORTIC_POS_BY_IHC
+- LYMPH_NODES_AORTIC_POS_TOTAL
+- LYMPH_NODES_PELVIC_EXAMINED_COUNT
+- LYMPH_NODES_PELVIC_POS_BY_HE
+- LYMPH_NODES_PELVIC_POS_BY_IHC
+- LYMPH_NODES_PELVIC_POS_TOTAL
+- MENOPAUSE_STATUS
+- METHOD_OF_INITIAL_SAMPLE_PROCUREMENT
+- METHOD_OF_INITIAL_SAMPLE_PROCUREMENT_OTHER
+- NEW_TUMOR_EVENT_AFTER_INITIAL_TREATMENT
+- OS_MONTHS
+- OS_STATUS
+- PERITONEAL_WASHING
+- PHARMACEUTICAL_TX_ADJUVANT
+- PREGNANCIES_FULL_TERM_COUNT
+- PROSPECTIVE_COLLECTION
+- RACE
+- RADIATION_TREATMENT_ADJUVANT
+- RESIDUAL_TUMOR
+- RETROSPECTIVE_COLLECTION
+- SAMPLE_COUNT
+- SITE_OF_TUMOR_TISSUE
+- SURGICAL_APPROACH_AT_DIAGNOSIS
+- TISSUE_SOURCE_SITE
+- TREATMENT_OUTCOME_FIRST_COURSE
+- TUMOR_INVASION_PERCENT
+- TUMOR_STATUS
+- WEIGHT
+- SLIDE_TYPE
+label_dict:
+  CLINICAL_STAGE:
+    Stage I: 0
+    Stage IA: 1
+    Stage IB: 2
+    Stage IC: 3
+    Stage II: 4
+    Stage IIA: 5
+    Stage IIB: 6
+    Stage III: 7
+    Stage IIIA: 8
+    Stage IIIB: 9
+    Stage IIIC: 10
+    Stage IIIC1: 11
+    Stage IIIC2: 12
+    Stage IV: 13
+    Stage IVA: 14
+    Stage IVB: 15
+  DFS_STATUS:
+    0:DiseaseFree: 0
+    1:Recurred/Progressed: 1
+  DIABETES_DIAGNOSIS_INDICATOR:
+    'NO': 0
+    'YES': 1
+  ETHNICITY:
+    HISPANIC OR LATINO: 0
+    NOT HISPANIC OR LATINO: 1
+  GRADE:
+    G1: 0
+    G2: 1
+    G3: 2
+    High Grade: 3
+  HISTOLOGICAL_DIAGNOSIS:
+    Endometrioid endometrial adenocarcinoma: 0
+    Mixed serous and endometrioid: 1
+    Serous endometrial adenocarcinoma: 2
+  HISTORY_COLORECTAL_CANCER:
+    'NO': 0
+    'YES': 1
+  HISTORY_HORMONAL_CONTRACEPTIVES_USE:
+    Former User: 0
+    Never Used: 1
+  HISTORY_MENOPAUSAL_HORMONE_THERAPY:
+    No, I have never taken menopausal hormone therapy.: 0
+    Yes, I have taken menopausal hormone therapy in the past, but no longer do.: 1
+  HISTORY_NEOADJUVANT_TRTYN:
+    'No': 0
+    'Yes': 1
+  HISTORY_OTHER_MALIGNANCY:
+    'No': 0
+    'Yes': 1
+  HYPERTENSION_DIAGNOSIS:
+    'NO': 0
+    'YES': 1
+  ICD_10:
+    C54.0: 0
+    C54.1: 1
+    C54.3: 2
+    C54.9: 3
+  ICD_O_3_HISTOLOGY:
+    8020/3: 0
+    8140/3: 1
+    8255/3: 2
+    8310/3: 3
+    8380/3: 4
+    8382/3: 5
+    8441/3: 6
+    8460/3: 7
+    8461/3: 8
+  ICD_O_3_SITE:
+    C54.0: 0
+    C54.1: 1
+    C54.3: 2
+    C54.9: 3
+  MENOPAUSE_STATUS:
+    Indeterminate (neither Pre or Postmenopausal): 0
+    Peri (6-12 months since last menstrual period): 1
+    Post (prior bilateral ovariectomy OR >12 mo since LMP with no prior hysterectomy): 2
+    Pre (<6 months since LMP AND no prior bilateral ovariectomy AND not on estrogen replacement): 3
+  METHOD_OF_INITIAL_SAMPLE_PROCUREMENT:
+    Cytology (e.g. Peritoneal or pleural fluid): 0
+    Dilation and curettage procedure: 1
+    Excisional Biopsy: 2
+    Fine needle aspiration biopsy: 3
+    Incisional Biopsy: 4
+    Office Endometrial Biopsy: 5
+    'Other method, specify:': 6
+    Tumor resection: 7
+  METHOD_OF_INITIAL_SAMPLE_PROCUREMENT_OTHER:
+    Biopsy, NOS: 0
+    Cervical biopsy: 1
+    Cervical polypectomy: 2
+    Endocervical curettage: 3
+    Hysteroscopy and endometrial ablation: 4
+    Pap Smear: 5
+    Radical hysterectomy, bilateral salpingo-oophorectomy: 6
+    Total hysterectomy, bilateral salpingo-oophorectomy with pelvic and para-aortic lymph node dissection: 7
+    Uterine scrapings: 8
+    biopsy of cervical tissue: 9
+    endocervical smear: 10
+    endometrial biopsy: 11
+    endometrial biopsy not otherwise specified: 12
+    endometrial biopsy, not otherwise specified: 13
+    pelvic wash specimen from PAP: 14
+    polyp removal: 15
+    suction using pipelle: 16
+  NEW_TUMOR_EVENT_AFTER_INITIAL_TREATMENT:
+    'NO': 0
+    'YES': 1
+  OS_STATUS:
+    0:LIVING: 0
+    1:DECEASED: 1
+  PERITONEAL_WASHING:
+    '[Not Evaluated]': 0
+    negative: 1
+    positive: 2
+  PHARMACEUTICAL_TX_ADJUVANT:
+    'NO': 0
+    'YES': 1
+  PREGNANCIES_FULL_TERM_COUNT:
+    '0': 0
+    '1': 1
+    '2': 2
+    '3': 3
+    4+: 4
+  PROSPECTIVE_COLLECTION:
+    'NO': 0
+    'YES': 1
+  RACE:
+    AMERICAN INDIAN OR ALASKA NATIVE: 0
+    ASIAN: 1
+    BLACK OR AFRICAN AMERICAN: 2
+    NATIVE HAWAIIAN OR OTHER PACIFIC ISLANDER: 3
+    WHITE: 4
+  RADIATION_TREATMENT_ADJUVANT:
+    'NO': 0
+    'YES': 1
+  RESIDUAL_TUMOR:
+    R0: 0
+    R1: 1
+    R2: 2
+    RX: 3
+  RETROSPECTIVE_COLLECTION:
+    'NO': 0
+    'YES': 1
+  SITE_OF_TUMOR_TISSUE:
+    Endometrial: 0
+    Other  Specify: 1
+  SLIDE_TYPE:
+    DX1: 0
+    DX2: 1
+    DX3: 2
+    DX4: 3
+    DX5: 4
+    DX6: 5
+    DX7: 6
+    DX8: 7
+  SURGICAL_APPROACH_AT_DIAGNOSIS:
+    Minimally Invasive: 0
+    open: 1
+  TISSUE_SOURCE_SITE:
+    2E: 0
+    4E: 1
+    5B: 2
+    5S: 3
+    A5: 4
+    AJ: 5
+    AP: 6
+    AW: 7
+    AX: 8
+    B5: 9
+    BG: 10
+    BK: 11
+    BS: 12
+    D1: 13
+    DF: 14
+    DI: 15
+    E6: 16
+    EC: 17
+    EO: 18
+    EY: 19
+    FI: 20
+    H5: 21
+    JU: 22
+    K6: 23
+    KJ: 24
+    PG: 25
+    QF: 26
+    QS: 27
+    SJ: 28
+    SL: 29
+  TREATMENT_OUTCOME_FIRST_COURSE:
+    Complete Remission/Response: 0
+    Partial Remission/Response: 1
+    Progressive Disease: 2
+    Stable Disease: 3
+  TUMOR_STATUS:
+    TUMOR FREE: 0
+    WITH TUMOR: 1

@@ -1,0 +1,47 @@
+
+cff-version: 1.2.0
+message: "If you use SlideMix, any part of our code, or build upon our work, please cite our paper."
+type: software
+title: "SlideMix: Enhancing Whole Slide Image Analysis via Multimodal Shuffling"
+authors:
+  - family-names: Wong
+    given-names: Chad
+  - family-names: Chen
+    given-names: Sicheng
+  - family-names: Zhang
+    given-names: Tianyi
+  - family-names: Chai
+    given-names: Enhui
+  - family-names: Jin
+    given-names: Yueming
+  - family-names: Liu
+    given-names: Zeyu
+  - family-names: Xia
+    given-names: Fei
+url: "https://github.com/Xia-Research-Lab/SlideMix"
+repository-code: "https://github.com/Xia-Research-Lab/SlideMix"
+license: Apache-2.0
+
+preferred-citation:
+  type: article
+  title: "SlideMix: Enhancing Whole Slide Image Analysis via Multimodal Shuffling"
+  authors:
+    - family-names: Wong
+      given-names: Chad
+    - family-names: Chen
+      given-names: Sicheng
+    - family-names: Zhang
+      given-names: Tianyi
+    - family-names: Chai
+      given-names: Enhui
+    - family-names: Jin
+      given-names: Yueming
+    - family-names: Liu
+      given-names: Zeyu
+    - family-names: Xia
+      given-names: Fei
+  title: "SlideMix: Enhancing Whole Slide Image Analysis via Multimodal Shuffling"
+  journal: "arXiv"
+  year: 2026
+  doi: "10.48550/arXiv.2609.00396"
+  url: "https://arxiv.org/abs/2609.00396"

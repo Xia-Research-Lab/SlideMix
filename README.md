@@ -24,12 +24,11 @@ If you find SlideMix useful, use any part of our code, or draw inspiration from 
 }
 ```
 
-
-
-
 ## Demo
 
-[`demo.ipynb`](demo.ipynb) visualizes how SlideMix mixes two slides: VARS, alignment, In-place Tile Shuffling, the curriculum stages and the soft labels. It does not train a model.
+> **Note:** The demo is still a work in progress and may change.
+
+[`demo.ipynb`](demo.ipynb) visualizes how SlideMix mixes two slides: VARS, alignment, In-place Tile Shuffling, the curriculum stages and the soft labels. 
 
 The demo requires a GPU runtime (in Colab: Runtime > Change runtime type > GPU) and a Hugging Face account with access to [GigaPath](https://huggingface.co/prov-gigapath/prov-gigapath) and [CONCH](https://huggingface.co/MahmoodLab/conch). A [Gemini API key](https://aistudio.google.com/apikey) is optional.
 

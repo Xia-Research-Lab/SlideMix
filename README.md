@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/slidemix.png" alt="SlideMix" width="100%">
+</p>
+
 # SlideMix: Enhancing Whole Slide Image Analysis via Multimodal Shuffling
 
 [[Paper]](https://arxiv.org/abs/2609.00396)

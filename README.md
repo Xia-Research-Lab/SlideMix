@@ -230,21 +230,3 @@ This project is licensed under the Apache 2.0 License. See [`LICENSE`](LICENSE) 
 </table>
 
 ---
-
-<div align="center">
-
-**⭐ Star us on GitHub — it motivates us a lot!**
-
-<p>
-  <a href="https://github.com/Xia-Research-Lab/SlideMix/stargazers">
-    <img src="https://img.shields.io/github/stars/Xia-Research-Lab/SlideMix?style=social" alt="Stars">
-  </a>
-  <a href="https://github.com/Xia-Research-Lab/SlideMix/network/members">
-    <img src="https://img.shields.io/github/forks/Xia-Research-Lab/SlideMix?style=social" alt="Forks">
-  </a>
-  <a href="https://github.com/Xia-Research-Lab/SlideMix/watchers">
-    <img src="https://img.shields.io/github/watchers/Xia-Research-Lab/SlideMix?style=social" alt="Watchers">
-  </a>
-</p>
-
-</div>

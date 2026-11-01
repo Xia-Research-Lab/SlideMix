@@ -14,6 +14,8 @@ Official implementation of **SlideMix**, a data augmentation method for multiple
 
 Coming soon.
 
+The demo requires a GPU runtime (Runtime > Change runtime type > GPU) and a download of the demo set of slides.
+
 ## Repository structure
 
 ```
@@ -28,7 +30,7 @@ models/
   CONCH/, clip/              CONCH and BiomedCLIP model code
 tools/
   slidemix_rag.py            PubMed retrieval corpus and index
-  slidemix_var_selector.py   per-slide ROI masks (VAR)
+  slidemix_var_selector.py   per-slide ROI masks (VARS)
   slidemix_vlm_scores.py     per-tile VLM class scores
 dataset_configs/             task definitions and 5-fold splits
 ```
@@ -49,7 +51,7 @@ SlideMix trains on tile embeddings stored as one `.safetensors` file per slide, 
 
 ```
 <data_path>/<dataset_name>/tiles-embeddings/<slide_id>.safetensors         # GigaPath
-<data_path>/<dataset_name>/tiles-embeddings_conch/<slide_id>.safetensors   # CONCH (for VAR and VLM labels)
+<data_path>/<dataset_name>/tiles-embeddings_conch/<slide_id>.safetensors   # CONCH (for VARS and VLM labels)
 ```
 
 Labels and fold assignments are read from `dataset_configs/<dataset_name>/`. Configurations are provided for PANDA, CAMELYON16, IMP-CRS-2024, TCGA-lung, TCGA-BLCA, TCGA-BRCA, TCGA-CESC, TCGA-GBM, TCGA-UCEC, TCGA-UCS and TCGA-UVM.
@@ -63,7 +65,7 @@ python tools/slidemix_rag.py fetch --dataset_name CAMELYON16 --out rag/docs.json
 python tools/slidemix_rag.py build --docs rag/docs.jsonl --out_dir rag/index
 ```
 
-### 2. ROI masks (VAR)
+### 2. ROI masks (VARS)
 
 ```bash
 python tools/slidemix_var_selector.py --data_path $DATA --dataset_name CAMELYON16 \

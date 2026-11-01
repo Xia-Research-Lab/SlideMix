@@ -27,18 +27,24 @@ If you find SlideMix useful, use any part of our code, or draw inspiration from 
 
 
 
-## Colab demo
+## Demo
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](TODO)
+[`demo.ipynb`](demo.ipynb) visualizes how SlideMix mixes two slides: VARS, alignment, In-place Tile Shuffling, the curriculum stages and the soft labels. It does not train a model.
 
-Coming soon.
+The demo requires a GPU runtime (in Colab: Runtime > Change runtime type > GPU) and a Hugging Face account with access to [GigaPath](https://huggingface.co/prov-gigapath/prov-gigapath) and [CONCH](https://huggingface.co/MahmoodLab/conch). A [Gemini API key](https://aistudio.google.com/apikey) is optional.
 
-The demo requires a GPU runtime (Runtime > Change runtime type > GPU) and a download of the demo set of slides.
+The demo set (two CAMELYON16 slides and their labels, 0.88 GB) is published as the [`demo-data` release](https://github.com/Xia-Research-Lab/SlideMix/releases/tag/demo-data) and is downloaded by the notebook. To download it manually:
+
+```bash
+wget https://github.com/Xia-Research-Lab/SlideMix/releases/download/demo-data/demo_set.zip
+unzip demo_set.zip
+```
 
 ## Repository structure
 
 ```
 main.py                      training / testing entry point
+demo.ipynb                   SlideMix visualization demo
 utils/
   slidemix.py                alignment, PCA filter, ITS, curriculum, soft labels
   slidemix_callback.py       curriculum feedback callback

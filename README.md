@@ -4,6 +4,8 @@
 
 # SlideMix: Enhancing Whole Slide Image Analysis via Multimodal Shuffling
 
+Official implementation of **SlideMix**, a data augmentation method for multiple instance learning (MIL) on whole slide images (WSIs). SlideMix creates new training slides by shuffling tile embeddings between two slides in place, guided by vision-language models, and assigns soft labels to the mixed slides.
+
 Find our preprint here: [[Paper]](https://arxiv.org/abs/2609.00396)
 
 
@@ -24,7 +26,6 @@ If you find SlideMix useful, use any part of our code, or draw inspiration from 
 
 
 
-Official implementation of **SlideMix**, a data augmentation method for multiple instance learning (MIL) on whole slide images (WSIs). SlideMix creates new training slides by shuffling tile embeddings between two slides in place, guided by vision-language models, and assigns soft labels to the mixed slides.
 
 ## Colab demo
 

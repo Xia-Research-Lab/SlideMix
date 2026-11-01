@@ -30,7 +30,7 @@ If you find SlideMix useful, use any part of our code, or draw inspiration from 
 
 [`demo.ipynb`](demo.ipynb) visualizes how SlideMix mixes two slides: VARS, alignment, In-place Tile Shuffling, the curriculum stages and the soft labels. 
 
-The demo requires a GPU runtime (in Colab: Runtime > Change runtime type > GPU) and a Hugging Face account with access to [GigaPath](https://huggingface.co/prov-gigapath/prov-gigapath) and [CONCH](https://huggingface.co/MahmoodLab/conch). A [Gemini API key](https://aistudio.google.com/apikey) is optional.
+The demo requires a GPU runtime (in Colab: Runtime > Change runtime type > GPU) and a Hugging Face account with access to [GigaPath](https://huggingface.co/prov-gigapath/prov-gigapath) and [CONCH](https://huggingface.co/MahmoodLab/conch). An API key is optional.
 
 The demo set (two CAMELYON16 slides and their labels, 0.88 GB) is published as the [`demo-data` release](https://github.com/Xia-Research-Lab/SlideMix/releases/tag/demo-data) and is downloaded by the notebook. To download it manually:
 

@@ -4,7 +4,25 @@
 
 # SlideMix: Enhancing Whole Slide Image Analysis via Multimodal Shuffling
 
-[[Paper]](https://arxiv.org/abs/2609.00396)
+Find our preprint here: [[Paper]](https://arxiv.org/abs/2609.00396)
+
+
+## Citation
+
+If you find SlideMix useful, use any part of our code, or draw inspiration from our work, we would appreciate it if you could cite our paper:
+
+```bibtex
+@article{wong2026slidemix,
+  title={SlideMix: Enhancing Whole Slide Image Analysis via Multimodal Shuffling},
+  author={Wong, Chad and Chen, Sicheng and Zhang, Tianyi and Chai, Enhui and Jin, Yueming and Liu, Zeyu and Xia, Fei},
+  journal={arXiv preprint arXiv:2609.00396},
+  year={2026},
+  doi={10.48550/arXiv.2609.00396},
+  url={https://arxiv.org/abs/2609.00396}
+}
+```
+
+
 
 Official implementation of **SlideMix**, a data augmentation method for multiple instance learning (MIL) on whole slide images (WSIs). SlideMix creates new training slides by shuffling tile embeddings between two slides in place, guided by vision-language models, and assigns soft labels to the mixed slides.
 

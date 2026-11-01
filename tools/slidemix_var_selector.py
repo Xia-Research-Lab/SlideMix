@@ -432,7 +432,7 @@ def select_roi_for_slide(
 
 
 def build_parser() -> argparse.ArgumentParser:
-    p = argparse.ArgumentParser(description="SlideMix VAR selector: per-slide ROI masks")
+    p = argparse.ArgumentParser(description="SlideMix VARS selector: per-slide ROI masks")
     p.add_argument("--data_path", type=str, required=True)
     p.add_argument("--dataset_name", type=str, required=True)
     p.add_argument("--embedding_name", type=str, default="GigaPath", help="embeddings the mask is aligned to")

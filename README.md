@@ -30,7 +30,8 @@
 
 |     Date      | Update                                                                                                   |
 | :-----------: | :------------------------------------------------------------------------------------------------------- |
-| 📄 **2026.11** | Started Adding Model on HuggingFace!                     |
+| 🖼️ **2026.11** | Demo dataset expanded with additional sample images.                                                     |
+| 📄 **2026.11** | Started Adding Model on HuggingFace!                                                                     |
 | 🧪 **2026.11** | Demo notebook and [demo data](https://github.com/Xia-Research-Lab/SlideMix/releases/tag/demo-data) released. |
 | 📄 **2026.10** | Preprint available on [arXiv](https://arxiv.org/abs/2609.00396) and code released.                       |
 

@@ -236,6 +236,9 @@ def fit_pca_stats(feature_iter, k=16, max_tiles=200_000, num_pairs=100_000, seed
     return PCAStats(mean=mean.float(), components=components, d_min=d_min, d_max=d_max)
 
 
+ROI_BLOCK_FRAC = 0.25
+
+
 def pca_distance_norm(stats, a, b) -> torch.Tensor:
     d = ((stats.project(a) - stats.project(b)) ** 2).sum(dim=1)
     return ((d - stats.d_min) / (stats.d_max - stats.d_min)).clamp(0.0, 1.0)
@@ -292,40 +295,35 @@ def its_mix(
     ref_idx, mov_idx = [], []
     for ri, (r, c) in enumerate(grid_r.tolist()):
         mi = cell_to_m.get((r, c))
-        if mi is not None and (roi_r_np[ri] or roi_m_np[mi]):
+        if mi is not None:
             ref_idx.append(ri)
             mov_idx.append(mi)
     ref_idx = np.asarray(ref_idx, dtype=np.int64)
     mov_idx = np.asarray(mov_idx, dtype=np.int64)
+    if len(ref_idx) == 0:
+        return _result(feat_r.clone(), 0, 0)
 
-    if pca_stats is not None and T_PCA < 1.0 and len(ref_idx):
+    N = max(int(N), 1)
+    _, inverse = np.unique(grid_r[ref_idx] // N, axis=0, return_inverse=True)
+    inverse = inverse.reshape(-1)
+    n_blocks = int(inverse.max()) + 1
+    block_size = np.bincount(inverse, minlength=n_blocks)
+
+    roi_pair = (roi_r_np[ref_idx] | roi_m_np[mov_idx]).astype(np.float64)
+    eligible = np.bincount(inverse, weights=roi_pair, minlength=n_blocks) / (N * N) >= ROI_BLOCK_FRAC
+    if pca_stats is not None and T_PCA < 1.0:
         d = pca_distance_norm(pca_stats, feat_r[torch.from_numpy(ref_idx)], feat_m[torch.from_numpy(mov_idx)])
-        keep = (d < T_PCA).numpy()
-        ref_idx, mov_idx = ref_idx[keep], mov_idx[keep]
+        block_d = np.bincount(inverse, weights=d.numpy().astype(np.float64), minlength=n_blocks) / block_size
+        eligible &= block_d < T_PCA
 
-    n_eligible = len(ref_idx)
-    target = math.ceil(P * n_eligible) if (P > 0 and n_eligible > 0) else 0
-    target = min(target, n_eligible)
+    eligible_blocks = np.nonzero(eligible)[0]
+    n_eligible = int(block_size[eligible_blocks].sum())
+    target = math.ceil(P * len(eligible_blocks)) if (P > 0 and len(eligible_blocks) > 0) else 0
     if target == 0:
         return _result(feat_r.clone(), n_eligible, 0)
 
-    N = max(int(N), 1)
-    block_keys = grid_r[ref_idx] // N
-    uniq, inverse = np.unique(block_keys, axis=0, return_inverse=True)
-    inverse = inverse.reshape(-1)
-    order = np.argsort(inverse, kind="stable")
-    members = np.split(order, np.cumsum(np.bincount(inverse, minlength=len(uniq)))[:-1])
-    chosen, count = [], 0
-    for b in rng.permutation(len(uniq)):
-        if count >= target:
-            break
-        m = members[b]
-        need = target - count
-        if len(m) > need:
-            m = np.sort(rng.choice(m, size=need, replace=False))
-        chosen.append(m)
-        count += len(m)
-    sel = np.concatenate(chosen)
+    chosen = rng.choice(eligible_blocks, size=min(target, len(eligible_blocks)), replace=False)
+    sel = np.isin(inverse, chosen)
     ref_sel, mov_sel = ref_idx[sel], mov_idx[sel]
 
     mixed = feat_r.float().clone()

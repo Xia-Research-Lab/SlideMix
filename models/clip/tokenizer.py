@@ -461,7 +461,7 @@ class HFTokenizer:
         assert max_length, 'Please set a valid max_length or context_length.'
 
         texts = [self.clean_fn(text) for text in texts]
-        input_ids = self.tokenizer.batch_encode_plus(
+        input_ids = self.tokenizer(
             texts,
             return_tensors=return_tensors,
             max_length=max_length,

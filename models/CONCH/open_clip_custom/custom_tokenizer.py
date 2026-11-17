@@ -21,7 +21,7 @@ def get_tokenizer():
 def tokenize(tokenizer, texts):
     # model context length is 128, but last token is reserved for <cls>
     # so we use 127 and insert <pad> at the end as a temporary placeholder
-    tokens = tokenizer.batch_encode_plus(texts, 
+    tokens = tokenizer(texts, 
                                         max_length = 127,
                                         add_special_tokens=True, 
                                         return_token_type_ids=False,

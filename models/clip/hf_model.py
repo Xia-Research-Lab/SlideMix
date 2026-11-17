@@ -131,7 +131,7 @@ class HFTextEncoder(nn.Module):
             else:
                 # For decoder-only or encoder-only models
                 uses_transformer_pooler = (pooler_type == "cls_pooler" and not getattr(self.config, "is_decoder", False))
-                kwargs = {"add_pooling_layer": True} if uses_transformer_pooler else {}
+                kwargs = {} if getattr(self.config, "is_decoder", False) else {"add_pooling_layer": uses_transformer_pooler}
                 self.transformer = (AutoModel.from_pretrained(model_name_or_path, **kwargs) if pretrained 
                                  else AutoModel.from_config(self.config, **kwargs))
         else:
